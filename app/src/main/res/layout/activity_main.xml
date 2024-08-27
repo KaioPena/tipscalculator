@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="196dp"
+        android:text="@string/app_name"
+        style="@style/Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/main_subtitle"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_hint_total_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/table_amount_label"
+        app:layout_constraintStart_toStartOf="@+id/tv_subtitle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_hint_total_table"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_total_table">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_total"
+            android:paddingStart="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/table_amount_hint"
+            android:inputType="numberDecimal"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+   <TextView
+       android:id="@+id/tv_hint_num_people"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="8dp"
+       android:text="@string/num_people_label"
+       app:layout_constraintStart_toStartOf="@id/til_total"
+       app:layout_constraintTop_toBottomOf="@id/til_total"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_num_people"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@id/tv_subtitle"
+        app:layout_constraintStart_toStartOf="@id/tv_hint_num_people"
+        app:layout_constraintTop_toBottomOf="@id/tv_hint_num_people">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_num_people"
+            android:paddingStart="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/num_of_people_hint"
+            android:maxLength="2"
+            android:inputType="number"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_hint_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/percentage_label"
+        app:layout_constraintStart_toStartOf="@id/til_num_people"
+        app:layout_constraintTop_toBottomOf="@id/til_num_people"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_percentage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@id/tv_subtitle"
+        app:layout_constraintStart_toStartOf="@id/tv_hint_percentage"
+        app:layout_constraintTop_toBottomOf="@id/tv_hint_percentage">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_percentage"
+            android:paddingStart="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/percentage_tip_hint"
+            android:maxLength="3"
+            android:inputType="number"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_clean"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/clean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="206dp" />
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
+        tools:ignore="MissingConstraints" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
